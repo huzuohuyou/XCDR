@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="XCDRModel.Store" Provider="Npgsql" ProviderManifestToken="9.6.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“postgres.public.inpatient”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="inpatient">
+          <Property Name="disease_code" Type="bpchar" MaxLength="36" />
+          <Property Name="patient_id" Type="varchar" MaxLength="36" />
+          <Property Name="patient_no" Type="varchar" MaxLength="36" />
+          <Property Name="case_no" Type="varchar" MaxLength="36" />
+          <Property Name="card_no" Type="varchar" MaxLength="36" />
+          <Property Name="name" Type="varchar" MaxLength="200" />
+          <Property Name="sex" Type="varchar" MaxLength="20" />
+          <Property Name="birth_date" Type="date" />
+          <Property Name="country_name" Type="varchar" MaxLength="200" />
+          <Property Name="nation" Type="varchar" MaxLength="200" />
+          <Property Name="in_date" Type="date" />
+          <Property Name="inpatient_area_code" Type="varchar" MaxLength="36" />
+          <Property Name="inpatient_area_name" Type="varchar" MaxLength="180" />
+          <Property Name="in_dept_code" Type="varchar" MaxLength="36" />
+          <Property Name="in_dept" Type="varchar" MaxLength="180" />
+          <Property Name="in_dept_date" Type="date" />
+          <Property Name="out_dept_date" Type="date" />
+          <Property Name="doctor_code" Type="varchar" MaxLength="36" />
+          <Property Name="doctor_name" Type="varchar" MaxLength="50" />
+          <Property Name="in_source" Type="varchar" MaxLength="20" />
+          <Property Name="in_times" Type="varchar" MaxLength="28" />
+          <Property Name="out_dept" Type="varchar" MaxLength="18" />
+          <Property Name="out_dept_name" Type="varchar" MaxLength="180" />
+          <Property Name="out_date" Type="date" />
+          <Property Name="admission_situation_flag" Type="varchar" MaxLength="20" />
+          <Property Name="in_diag_code" Type="varchar" MaxLength="90" />
+          <Property Name="in_diag_name" Type="varchar" MaxLength="900" />
+          <Property Name="out_diag_code" Type="varchar" MaxLength="90" />
+          <Property Name="out_diag_name" Type="varchar" MaxLength="900" />
+          <Property Name="out_status" Type="varchar" MaxLength="20" />
+          <Property Name="out_type" Type="varchar" MaxLength="20" />
+          <Property Name="increment_flag" Type="varchar" MaxLength="100" />
+        </EntityType>-->
+        <EntityContainer Name="XCDRModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XCDRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="postgresEntities" annotation:LazyLoadingEnabled="true" />
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XCDRModelStoreContainer" CdmEntityContainer="postgresEntities" />
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

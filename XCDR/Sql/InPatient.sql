@@ -1,0 +1,37 @@
+
+
+CREATE TABLE InPatient(
+	Disease_Code varchar(36) NULL,
+	Patient_Id varchar(36) NULL,
+	Patient_No varchar(36) NULL,
+	Case_No varchar(36) NULL,
+	Card_No varchar(36) NULL,
+	Name varchar(200) NULL,
+	Sex varchar(20) NULL,
+	Birth_Date date NULL,
+	Country_Name varchar(200) NULL,
+	Nation varchar(200) NULL,
+	In_Date date NULL,
+	Inpatient_Area_Code varchar(36) NULL,
+	Inpatient_Area_Name varchar(180) NULL,
+	In_Dept_Code varchar(36) NULL,
+	In_Dept varchar(180) NULL,
+	In_Dept_Date date NULL,
+	Out_Dept_Date date NULL,
+	Doctor_Code varchar(36) NULL,
+	Doctor_Name varchar(50) NULL,
+	In_Source varchar(20) NULL,
+	In_Times varchar(28) NULL,
+	Out_Dept varchar(18) NULL,
+	Out_Dept_Name varchar(180) NULL,
+	Out_Date date NULL,
+	Admission_Situation_Flag varchar(20) NULL,
+	In_Diag_Code varchar(90) NULL,
+	In_Diag_Name varchar(900) NULL,
+	Out_Diag_Code varchar(90) NULL,
+	Out_Diag_Name varchar(900) NULL,
+	Out_Status varchar(20) NULL,
+	Out_Type varchar(20) NULL,
+	Increment_Flag varchar(100) NULL
+)
+
