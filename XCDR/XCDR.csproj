@@ -234,11 +234,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Destination.cs">
-      <DependentUpon>XCDR.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InPatient.cs">
+      <DependentUpon>XCDR.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -268,6 +268,9 @@
     <Content Include="Areas\HelpPage\TestClient.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\codemirror.css" />
+    <Content Include="Content\docs.css" />
+    <Content Include="Content\monokai.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -331,6 +334,74 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\addon\comment\comment.js" />
+    <Content Include="Scripts\addon\comment\continuecomment.js" />
+    <Content Include="Scripts\addon\dialog\dialog.css" />
+    <Content Include="Scripts\addon\dialog\dialog.js" />
+    <Content Include="Scripts\addon\display\autorefresh.js" />
+    <Content Include="Scripts\addon\display\fullscreen.css" />
+    <Content Include="Scripts\addon\display\fullscreen.js" />
+    <Content Include="Scripts\addon\display\panel.js" />
+    <Content Include="Scripts\addon\display\placeholder.js" />
+    <Content Include="Scripts\addon\display\rulers.js" />
+    <Content Include="Scripts\addon\edit\closebrackets.js" />
+    <Content Include="Scripts\addon\edit\closetag.js" />
+    <Content Include="Scripts\addon\edit\continuelist.js" />
+    <Content Include="Scripts\addon\edit\matchbrackets.js" />
+    <Content Include="Scripts\addon\edit\matchtags.js" />
+    <Content Include="Scripts\addon\edit\trailingspace.js" />
+    <Content Include="Scripts\addon\fold\brace-fold.js" />
+    <Content Include="Scripts\addon\fold\comment-fold.js" />
+    <Content Include="Scripts\addon\fold\foldcode.js" />
+    <Content Include="Scripts\addon\fold\foldgutter.css" />
+    <Content Include="Scripts\addon\fold\foldgutter.js" />
+    <Content Include="Scripts\addon\fold\indent-fold.js" />
+    <Content Include="Scripts\addon\fold\markdown-fold.js" />
+    <Content Include="Scripts\addon\fold\xml-fold.js" />
+    <Content Include="Scripts\addon\hint\anyword-hint.js" />
+    <Content Include="Scripts\addon\hint\css-hint.js" />
+    <Content Include="Scripts\addon\hint\html-hint.js" />
+    <Content Include="Scripts\addon\hint\javascript-hint.js" />
+    <Content Include="Scripts\addon\hint\show-hint.css" />
+    <Content Include="Scripts\addon\hint\show-hint.js" />
+    <Content Include="Scripts\addon\hint\sql-hint.js" />
+    <Content Include="Scripts\addon\hint\xml-hint.js" />
+    <Content Include="Scripts\addon\lint\coffeescript-lint.js" />
+    <Content Include="Scripts\addon\lint\css-lint.js" />
+    <Content Include="Scripts\addon\lint\html-lint.js" />
+    <Content Include="Scripts\addon\lint\javascript-lint.js" />
+    <Content Include="Scripts\addon\lint\json-lint.js" />
+    <Content Include="Scripts\addon\lint\lint.css" />
+    <Content Include="Scripts\addon\lint\lint.js" />
+    <Content Include="Scripts\addon\lint\yaml-lint.js" />
+    <Content Include="Scripts\addon\merge\merge.css" />
+    <Content Include="Scripts\addon\merge\merge.js" />
+    <Content Include="Scripts\addon\mode\loadmode.js" />
+    <Content Include="Scripts\addon\mode\multiplex.js" />
+    <Content Include="Scripts\addon\mode\multiplex_test.js" />
+    <Content Include="Scripts\addon\mode\overlay.js" />
+    <Content Include="Scripts\addon\mode\simple.js" />
+    <Content Include="Scripts\addon\runmode\colorize.js" />
+    <Content Include="Scripts\addon\runmode\runmode-standalone.js" />
+    <Content Include="Scripts\addon\runmode\runmode.js" />
+    <Content Include="Scripts\addon\runmode\runmode.node.js" />
+    <Content Include="Scripts\addon\scroll\annotatescrollbar.js" />
+    <Content Include="Scripts\addon\scroll\scrollpastend.js" />
+    <Content Include="Scripts\addon\scroll\simplescrollbars.css" />
+    <Content Include="Scripts\addon\scroll\simplescrollbars.js" />
+    <Content Include="Scripts\addon\search\jump-to-line.js" />
+    <Content Include="Scripts\addon\search\match-highlighter.js" />
+    <Content Include="Scripts\addon\search\matchesonscrollbar.css" />
+    <Content Include="Scripts\addon\search\matchesonscrollbar.js" />
+    <Content Include="Scripts\addon\search\search.js" />
+    <Content Include="Scripts\addon\search\searchcursor.js" />
+    <Content Include="Scripts\addon\selection\active-line.js" />
+    <Content Include="Scripts\addon\selection\mark-selection.js" />
+    <Content Include="Scripts\addon\selection\selection-pointer.js" />
+    <Content Include="Scripts\addon\tern\tern.css" />
+    <Content Include="Scripts\addon\tern\tern.js" />
+    <Content Include="Scripts\addon\tern\worker.js" />
+    <Content Include="Scripts\addon\wrap\hardwrap.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -357,6 +428,9 @@
     <Content Include="Areas\JoinGroup\Views\web.config" />
     <Content Include="Areas\DataItem\Views\web.config" />
     <Content Include="Areas\XCDR\Views\web.config" />
+    <Content Include="Scripts\codemirror.js" />
+    <Content Include="Scripts\python.js" />
+    <Content Include="Scripts\sublime.js" />
     <Content Include="XCDR.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>XCDR.edmx</DependentUpon>
@@ -416,7 +490,6 @@
     <Folder Include="Areas\DataItem\Views\Shared\" />
     <Folder Include="Areas\JoinGroup\PyScripys\" />
     <Folder Include="Areas\JoinGroup\Views\Shared\" />
-    <Folder Include="Areas\NewFolder1\" />
     <Folder Include="Areas\XCDR\Controllers\" />
     <Folder Include="Areas\XCDR\Models\" />
     <Folder Include="Areas\XCDR\Views\Shared\" />

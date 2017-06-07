@@ -25,6 +25,6 @@ namespace XCDR
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Destination> Destination { get; set; }
+        public virtual DbSet<InPatient> InPatient { get; set; }
     }
 }

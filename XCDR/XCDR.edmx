@@ -5,29 +5,91 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="postgresModel.Store" Provider="Npgsql" ProviderManifestToken="9.6.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Destination">
+        <EntityType Name="InPatient">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
+          <Property Name="DiseaseCode" Type="bpchar" MaxLength="36" />
+          <Property Name="PatientId" Type="varchar" MaxLength="36" />
+          <Property Name="PatientNo" Type="varchar" MaxLength="36" />
+          <Property Name="CaseNo" Type="varchar" MaxLength="36" />
+          <Property Name="CardNo" Type="varchar" MaxLength="36" />
+          <Property Name="Name" Type="varchar" MaxLength="200" />
+          <Property Name="Sex" Type="varchar" MaxLength="20" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="CountryName" Type="varchar" MaxLength="200" />
+          <Property Name="Nation" Type="varchar" MaxLength="200" />
+          <Property Name="InDate" Type="date" />
+          <Property Name="InpatientAreaCode" Type="varchar" MaxLength="36" />
+          <Property Name="InpatientAreaName" Type="varchar" MaxLength="180" />
+          <Property Name="InDeptCode" Type="varchar" MaxLength="36" />
+          <Property Name="InDept" Type="varchar" MaxLength="180" />
+          <Property Name="InDeptDate" Type="date" />
+          <Property Name="OutDeptDate" Type="date" />
+          <Property Name="DoctorCode" Type="varchar" MaxLength="36" />
+          <Property Name="DoctorName" Type="varchar" MaxLength="50" />
+          <Property Name="InSource" Type="varchar" MaxLength="20" />
+          <Property Name="InTimes" Type="varchar" MaxLength="28" />
+          <Property Name="OutDept" Type="varchar" MaxLength="18" />
+          <Property Name="OutDeptName" Type="varchar" MaxLength="180" />
+          <Property Name="OutDate" Type="date" />
+          <Property Name="AdmissionSituationFlag" Type="varchar" MaxLength="20" />
+          <Property Name="InDiagCode" Type="varchar" MaxLength="90" />
+          <Property Name="InDiagName" Type="varchar" MaxLength="900" />
+          <Property Name="OutDiagCode" Type="varchar" MaxLength="90" />
+          <Property Name="OutDiagName" Type="varchar" MaxLength="900" />
+          <Property Name="OutStatus" Type="varchar" MaxLength="20" />
+          <Property Name="OutType" Type="varchar" MaxLength="20" />
+          <Property Name="IncrementFlag" Type="varchar" MaxLength="100" />
           <Property Name="Id" Type="int8" Nullable="false" />
-          <Property Name="Name" Type="text" />
         </EntityType>
         <EntityContainer Name="postgresModelStoreContainer">
-          <EntitySet Name="Destination" EntityType="Self.Destination" Schema="public" store:Type="Tables" />
+          <EntitySet Name="InPatient" EntityType="Self.InPatient" Schema="public" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="postgresModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="postgres" annotation:LazyLoadingEnabled="true" >
-          <EntitySet Name="Destination" EntityType="postgresModel.Destination" />
+          <EntitySet Name="InPatient" EntityType="postgresModel.InPatient" />
         </EntityContainer>
-        <EntityType Name="Destination">
+        <EntityType Name="InPatient">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
+          <Property Name="DiseaseCode" Type="String" MaxLength="36" FixedLength="true" Unicode="true" />
+          <Property Name="PatientId" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="PatientNo" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CaseNo" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="CardNo" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="CountryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Nation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="InDate" Type="DateTime" Precision="0" />
+          <Property Name="InpatientAreaCode" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="InpatientAreaName" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="InDeptCode" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="InDept" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="InDeptDate" Type="DateTime" Precision="0" />
+          <Property Name="OutDeptDate" Type="DateTime" Precision="0" />
+          <Property Name="DoctorCode" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="DoctorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InSource" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="InTimes" Type="String" MaxLength="28" FixedLength="false" Unicode="true" />
+          <Property Name="OutDept" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+          <Property Name="OutDeptName" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="OutDate" Type="DateTime" Precision="0" />
+          <Property Name="AdmissionSituationFlag" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="InDiagCode" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="InDiagName" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Name="OutDiagCode" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="OutDiagName" Type="String" MaxLength="900" FixedLength="false" Unicode="true" />
+          <Property Name="OutStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OutType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IncrementFlag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -35,11 +97,42 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="postgresModelStoreContainer" CdmEntityContainer="postgres" >
-          <EntitySetMapping Name="Destination">
-            <EntityTypeMapping TypeName="postgresModel.Destination">
-              <MappingFragment StoreEntitySet="Destination">
-                <ScalarProperty Name="Name" ColumnName="Name" />
+          <EntitySetMapping Name="InPatient">
+            <EntityTypeMapping TypeName="postgresModel.InPatient">
+              <MappingFragment StoreEntitySet="InPatient">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IncrementFlag" ColumnName="IncrementFlag" />
+                <ScalarProperty Name="OutType" ColumnName="OutType" />
+                <ScalarProperty Name="OutStatus" ColumnName="OutStatus" />
+                <ScalarProperty Name="OutDiagName" ColumnName="OutDiagName" />
+                <ScalarProperty Name="OutDiagCode" ColumnName="OutDiagCode" />
+                <ScalarProperty Name="InDiagName" ColumnName="InDiagName" />
+                <ScalarProperty Name="InDiagCode" ColumnName="InDiagCode" />
+                <ScalarProperty Name="AdmissionSituationFlag" ColumnName="AdmissionSituationFlag" />
+                <ScalarProperty Name="OutDate" ColumnName="OutDate" />
+                <ScalarProperty Name="OutDeptName" ColumnName="OutDeptName" />
+                <ScalarProperty Name="OutDept" ColumnName="OutDept" />
+                <ScalarProperty Name="InTimes" ColumnName="InTimes" />
+                <ScalarProperty Name="InSource" ColumnName="InSource" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="DoctorCode" ColumnName="DoctorCode" />
+                <ScalarProperty Name="OutDeptDate" ColumnName="OutDeptDate" />
+                <ScalarProperty Name="InDeptDate" ColumnName="InDeptDate" />
+                <ScalarProperty Name="InDept" ColumnName="InDept" />
+                <ScalarProperty Name="InDeptCode" ColumnName="InDeptCode" />
+                <ScalarProperty Name="InpatientAreaName" ColumnName="InpatientAreaName" />
+                <ScalarProperty Name="InpatientAreaCode" ColumnName="InpatientAreaCode" />
+                <ScalarProperty Name="InDate" ColumnName="InDate" />
+                <ScalarProperty Name="Nation" ColumnName="Nation" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+                <ScalarProperty Name="CaseNo" ColumnName="CaseNo" />
+                <ScalarProperty Name="PatientNo" ColumnName="PatientNo" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="DiseaseCode" ColumnName="DiseaseCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

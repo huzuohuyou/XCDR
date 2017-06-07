@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="076acca2858a4997a11590697d5eb6ba" Name="Diagram1" ZoomLevel="108" >
-        <EntityTypeShape EntityType="postgresModel.Destination" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="postgresModel.InPatient" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

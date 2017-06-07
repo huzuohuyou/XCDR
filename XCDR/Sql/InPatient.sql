@@ -1,37 +1,48 @@
+-- Table: public."InPatient"
 
+-- DROP TABLE public."InPatient";
 
-CREATE TABLE InPatient(
-	Disease_Code varchar(36) NULL,
-	Patient_Id varchar(36) NULL,
-	Patient_No varchar(36) NULL,
-	Case_No varchar(36) NULL,
-	Card_No varchar(36) NULL,
-	Name varchar(200) NULL,
-	Sex varchar(20) NULL,
-	Birth_Date date NULL,
-	Country_Name varchar(200) NULL,
-	Nation varchar(200) NULL,
-	In_Date date NULL,
-	Inpatient_Area_Code varchar(36) NULL,
-	Inpatient_Area_Name varchar(180) NULL,
-	In_Dept_Code varchar(36) NULL,
-	In_Dept varchar(180) NULL,
-	In_Dept_Date date NULL,
-	Out_Dept_Date date NULL,
-	Doctor_Code varchar(36) NULL,
-	Doctor_Name varchar(50) NULL,
-	In_Source varchar(20) NULL,
-	In_Times varchar(28) NULL,
-	Out_Dept varchar(18) NULL,
-	Out_Dept_Name varchar(180) NULL,
-	Out_Date date NULL,
-	Admission_Situation_Flag varchar(20) NULL,
-	In_Diag_Code varchar(90) NULL,
-	In_Diag_Name varchar(900) NULL,
-	Out_Diag_Code varchar(90) NULL,
-	Out_Diag_Name varchar(900) NULL,
-	Out_Status varchar(20) NULL,
-	Out_Type varchar(20) NULL,
-	Increment_Flag varchar(100) NULL
+CREATE TABLE public."InPatient"
+(
+    "DiseaseCode" character(36) COLLATE pg_catalog."default",
+    "PatientId" character varying(36) COLLATE pg_catalog."default",
+    "PatientNo" character varying(36) COLLATE pg_catalog."default",
+    "CaseNo" character varying(36) COLLATE pg_catalog."default",
+    "CardNo" character varying(36) COLLATE pg_catalog."default",
+    "Name" character varying(200) COLLATE pg_catalog."default",
+    "Sex" character varying(20) COLLATE pg_catalog."default",
+    "BirthDate" date,
+    "CountryName" character varying(200) COLLATE pg_catalog."default",
+    "Nation" character varying(200) COLLATE pg_catalog."default",
+    "InDate" date,
+    "InpatientAreaCode" character varying(36) COLLATE pg_catalog."default",
+    "InpatientAreaName" character varying(180) COLLATE pg_catalog."default",
+    "InDeptCode" character varying(36) COLLATE pg_catalog."default",
+    "InDept" character varying(180) COLLATE pg_catalog."default",
+    "InDeptDate" date,
+    "OutDeptDate" date,
+    "DoctorCode" character varying(36) COLLATE pg_catalog."default",
+    "DoctorName" character varying(50) COLLATE pg_catalog."default",
+    "InSource" character varying(20) COLLATE pg_catalog."default",
+    "InTimes" character varying(28) COLLATE pg_catalog."default",
+    "OutDept" character varying(18) COLLATE pg_catalog."default",
+    "OutDeptName" character varying(180) COLLATE pg_catalog."default",
+    "OutDate" date,
+    "AdmissionSituationFlag" character varying(20) COLLATE pg_catalog."default",
+    "InDiagCode" character varying(90) COLLATE pg_catalog."default",
+    "InDiagName" character varying(900) COLLATE pg_catalog."default",
+    "OutDiagCode" character varying(90) COLLATE pg_catalog."default",
+    "OutDiagName" character varying(900) COLLATE pg_catalog."default",
+    "OutStatus" character varying(20) COLLATE pg_catalog."default",
+    "OutType" character varying(20) COLLATE pg_catalog."default",
+    "IncrementFlag" character varying(100) COLLATE pg_catalog."default",
+    "Id" bigint NOT NULL,
+    CONSTRAINT inpatient_pkey PRIMARY KEY ("Id")
 )
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
 
+ALTER TABLE public."InPatient"
+    OWNER to postgres;
