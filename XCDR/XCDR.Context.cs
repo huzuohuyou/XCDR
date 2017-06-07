@@ -13,10 +13,10 @@ namespace XCDR
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class postgresEntities : DbContext
+    public partial class postgres : DbContext
     {
-        public postgresEntities()
-            : base("name=postgresEntities")
+        public postgres()
+            : base("name=postgres")
         {
         }
     
@@ -25,5 +25,6 @@ namespace XCDR
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Destination> Destination { get; set; }
     }
 }

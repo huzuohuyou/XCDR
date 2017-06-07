@@ -4,55 +4,46 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="XCDRModel.Store" Provider="Npgsql" ProviderManifestToken="9.6.2" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--生成过程中发现错误:
-警告 6013: 表/视图“postgres.public.inpatient”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-        <EntityType Name="inpatient">
-          <Property Name="disease_code" Type="bpchar" MaxLength="36" />
-          <Property Name="patient_id" Type="varchar" MaxLength="36" />
-          <Property Name="patient_no" Type="varchar" MaxLength="36" />
-          <Property Name="case_no" Type="varchar" MaxLength="36" />
-          <Property Name="card_no" Type="varchar" MaxLength="36" />
-          <Property Name="name" Type="varchar" MaxLength="200" />
-          <Property Name="sex" Type="varchar" MaxLength="20" />
-          <Property Name="birth_date" Type="date" />
-          <Property Name="country_name" Type="varchar" MaxLength="200" />
-          <Property Name="nation" Type="varchar" MaxLength="200" />
-          <Property Name="in_date" Type="date" />
-          <Property Name="inpatient_area_code" Type="varchar" MaxLength="36" />
-          <Property Name="inpatient_area_name" Type="varchar" MaxLength="180" />
-          <Property Name="in_dept_code" Type="varchar" MaxLength="36" />
-          <Property Name="in_dept" Type="varchar" MaxLength="180" />
-          <Property Name="in_dept_date" Type="date" />
-          <Property Name="out_dept_date" Type="date" />
-          <Property Name="doctor_code" Type="varchar" MaxLength="36" />
-          <Property Name="doctor_name" Type="varchar" MaxLength="50" />
-          <Property Name="in_source" Type="varchar" MaxLength="20" />
-          <Property Name="in_times" Type="varchar" MaxLength="28" />
-          <Property Name="out_dept" Type="varchar" MaxLength="18" />
-          <Property Name="out_dept_name" Type="varchar" MaxLength="180" />
-          <Property Name="out_date" Type="date" />
-          <Property Name="admission_situation_flag" Type="varchar" MaxLength="20" />
-          <Property Name="in_diag_code" Type="varchar" MaxLength="90" />
-          <Property Name="in_diag_name" Type="varchar" MaxLength="900" />
-          <Property Name="out_diag_code" Type="varchar" MaxLength="90" />
-          <Property Name="out_diag_name" Type="varchar" MaxLength="900" />
-          <Property Name="out_status" Type="varchar" MaxLength="20" />
-          <Property Name="out_type" Type="varchar" MaxLength="20" />
-          <Property Name="increment_flag" Type="varchar" MaxLength="100" />
-        </EntityType>-->
-        <EntityContainer Name="XCDRModelStoreContainer" />
+    <Schema Namespace="postgresModel.Store" Provider="Npgsql" ProviderManifestToken="9.6.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Destination">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int8" Nullable="false" />
+          <Property Name="Name" Type="text" />
+        </EntityType>
+        <EntityContainer Name="postgresModelStoreContainer">
+          <EntitySet Name="Destination" EntityType="Self.Destination" Schema="public" store:Type="Tables" />
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="XCDRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="postgresEntities" annotation:LazyLoadingEnabled="true" />
+      <Schema Namespace="postgresModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="postgres" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Destination" EntityType="postgresModel.Destination" />
+        </EntityContainer>
+        <EntityType Name="Destination">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="XCDRModelStoreContainer" CdmEntityContainer="postgresEntities" />
+        <EntityContainerMapping StorageEntityContainer="postgresModelStoreContainer" CdmEntityContainer="postgres" >
+          <EntitySetMapping Name="Destination">
+            <EntityTypeMapping TypeName="postgresModel.Destination">
+              <MappingFragment StoreEntitySet="Destination">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

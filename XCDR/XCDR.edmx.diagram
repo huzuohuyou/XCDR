@@ -4,7 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9b7c2e5be7dd4b14865d3c3bcbe787d1" Name="Diagram1" />
+      <Diagram DiagramId="076acca2858a4997a11590697d5eb6ba" Name="Diagram1" ZoomLevel="108" >
+        <EntityTypeShape EntityType="postgresModel.Destination" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
