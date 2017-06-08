@@ -230,6 +230,7 @@
     <Compile Include="Areas\JoinGroup\Controllers\TestController.cs" />
     <Compile Include="Areas\JoinGroup\JoinGroupAreaRegistration.cs" />
     <Compile Include="Areas\JoinGroup\Models\OriginalCondition.cs" />
+    <Compile Include="Areas\XCDR\Controllers\UsingPythonController.cs" />
     <Compile Include="Areas\XCDR\XCDRAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -490,7 +491,6 @@
     <Folder Include="Areas\DataItem\Views\Shared\" />
     <Folder Include="Areas\JoinGroup\PyScripys\" />
     <Folder Include="Areas\JoinGroup\Views\Shared\" />
-    <Folder Include="Areas\XCDR\Controllers\" />
     <Folder Include="Areas\XCDR\Models\" />
     <Folder Include="Areas\XCDR\Views\Shared\" />
   </ItemGroup>
@@ -506,6 +506,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XCDR.Utils\XCDR.Utils.csproj">
+      <Project>{993391ae-d72f-43ee-9e7b-cb30cffe523d}</Project>
+      <Name>XCDR.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -3,9 +3,10 @@
     
 </div>
 <textarea id="editor" name="editor"></textarea>
-
+<input id="run" type="button" value="run"/>
 <script src="~/Scripts/codemirror.js"></script>
 <script src="~/Scripts/python.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
 <script src="~/Scripts/addon/edit/matchbrackets.js"></script>
 <link rel="stylesheet" href="~/Content/codemirror.css">
 <link rel="stylesheet" href="~/Content/docs.css">
@@ -21,5 +22,9 @@
         indentUnit: 4,
         matchBrackets: true
     });
-
+    $("#run").click(function () {
+        $.post("http://localhost:13756/Help/Api/POST-api-UsingPython_pythonContent", { pythonContent: $("#editor").val() }, function (data, status) {
+            alert("Data: " + data + "nStatus: " + status);
+        });
+    })
 </script>
