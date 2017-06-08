@@ -12,10 +12,9 @@ namespace XCDR.Utils
         {
             try
             {
-                ScriptRuntime scriptRuntime = ScriptRuntime.CreateFromConfiguration();
-                ScriptEngine rbEng = scriptRuntime.GetEngine("python");
-                ScriptSource source = rbEng.CreateScriptSourceFromString(pyContent);//设置脚本文件 
-                ScriptScope scope = rbEng.CreateScope();
+                var engine = Python.CreateEngine();
+                var scope = engine.CreateScope();
+                var source = engine.CreateScriptSourceFromString(pyContent);
                 foreach (var item in paramList)
                 {
                     scope.SetVariable(item.Name, item.FixValue);
@@ -33,10 +32,9 @@ namespace XCDR.Utils
         {
             try
             {
-                ScriptRuntime scriptRuntime = ScriptRuntime.CreateFromConfiguration();
-                ScriptEngine rbEng = scriptRuntime.GetEngine("python");
-                ScriptSource source = rbEng.CreateScriptSourceFromFile(fileName);//设置脚本文件 
-                ScriptScope scope = rbEng.CreateScope();
+                var engine = Python.CreateEngine();
+                var scope = engine.CreateScope();
+                var source = engine.CreateScriptSourceFromFile(fileName);
                 foreach (var item in paramList)
                 {
                     scope.SetVariable(item.Name, item.FixValue);
@@ -49,5 +47,8 @@ namespace XCDR.Utils
                 throw ex;
             }
         }
+
+
+       
     }
 }
